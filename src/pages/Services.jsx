@@ -5,6 +5,7 @@ const SERVICES = [
   {
     num: '01', title: 'Legal Guidance', sub: 'Know Your Rights', vol: 'By our Legal Volunteers',
     desc: 'Our volunteer lawyers provide free consultations on civil disputes, tenant rights, consumer protection, family matters, and documentation. Clear guidance in Tamil and English — no courthouse jargon.',
+    disclaimer: 'Information shared is general in nature and does not constitute legal advice or create an advocate–client relationship. SKET does not solicit legal work. For formal representation, please engage a licensed advocate independently.',
   },
   {
     num: '02', title: 'Financial & Tax', sub: 'Clarity With Money', vol: 'By our CA Volunteers',
@@ -45,13 +46,18 @@ export default function Services() {
 
       <section style={{ padding: isMobile ? '0 16px 56px' : '0 24px 80px', maxWidth: '1040px', margin: '0 auto' }}>
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '2px', background: '#dfd6ca' }}>
-          {SERVICES.map(({ num, title, sub, vol, desc }) => (
+          {SERVICES.map(({ num, title, sub, vol, desc, disclaimer }) => (
             <div key={num} style={{ background: '#fffcf7', padding: isMobile ? '36px 28px' : '52px 44px' }}>
               <p style={{ fontSize: '11px', fontWeight: 500, letterSpacing: '3px', color: '#ba7d4c', marginBottom: '20px' }}>{num}</p>
               <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: isMobile ? '28px' : '34px', fontWeight: 600, color: '#1c1812', marginBottom: '8px' }}>{title}</h3>
               <p style={{ fontSize: '13px', fontWeight: 500, color: '#8b3525', marginBottom: '20px', letterSpacing: '0.5px' }}>{sub}</p>
               <p style={{ fontSize: '14px', color: '#5e5248', lineHeight: 1.9, marginBottom: '28px' }}>{desc}</p>
-              <p style={{ fontSize: '11px', color: '#9e9089', letterSpacing: '1.5px', textTransform: 'uppercase' }}>{vol}</p>
+              <p style={{ fontSize: '11px', color: '#9e9089', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: disclaimer ? '16px' : '0' }}>{vol}</p>
+              {disclaimer && (
+                <p style={{ fontSize: '11px', color: '#9e9089', lineHeight: 1.7, borderTop: '1px solid #f0ebe3', paddingTop: '14px', fontStyle: 'italic' }}>
+                  {disclaimer}
+                </p>
+              )}
             </div>
           ))}
           <GuidanceDeskCard isMobile={isMobile} />

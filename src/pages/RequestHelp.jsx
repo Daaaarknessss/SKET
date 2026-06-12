@@ -114,6 +114,14 @@ function HelpForm({ onSubmit, isMobile }) {
         <option>I'm not sure — just want to talk</option>
       </SelectField>
 
+      {fields.category === 'Legal — Rights & Documentation' && (
+        <div style={{ padding: '14px 16px', background: 'rgba(139,53,37,0.05)', borderLeft: '3px solid #8b3525' }}>
+          <p style={{ fontSize: '12px', color: '#5e5248', lineHeight: 1.75, fontStyle: 'italic' }}>
+            <strong style={{ fontStyle: 'normal' }}>Please note:</strong> Guidance provided by SKET volunteers is general legal information only. It does not constitute legal advice and does not create an advocate–client relationship. SKET does not solicit legal work. For formal legal representation, please engage a licensed advocate independently.
+          </p>
+        </div>
+      )}
+
       <TextareaField
         label="Tell Us About Your Situation *"
         rows={5} required
