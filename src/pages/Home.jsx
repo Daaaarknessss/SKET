@@ -112,13 +112,15 @@ export default function Home() {
             </p>
             <VolunteerLink href="#volunteer" />
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '16px' }}>
             <FounderCard initial="N" name="Naman Mehta" bg="#8b3525" />
             <FounderCard initial="A" name="Aravind G" bg="#253525" />
-            <div style={{ aspectRatio: '4/3', background: '#edeae3', border: '1px dashed #cfc8bc', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-              <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1.5px solid #cfc8bc' }} />
-              <p style={{ fontSize: '11px', color: '#9e9089', letterSpacing: '1px', textTransform: 'uppercase', textAlign: 'center', lineHeight: 1.6 }}>Photo — Founders<br />or Team at Work</p>
-            </div>
+            <FounderCard initial="R" name="Rishabh Soni" bg="#4a2c6e" />
+            <FounderCard initial="I" name="Ishan Verma" bg="#1a3a5c" />
+            <FounderCard initial="S" name="Sankrut Anand" bg="#744210" />
+            <FounderCard initial="N" name="Nilay Jain" bg="#2d4a3a" />
+            <FounderCard initial="M" name="Madhusudhan" bg="#5c3520" />
+            <FounderCard initial="A" name="Adithya Kamilla" bg="#3a5c4a" />
           </div>
         </div>
       </section>
